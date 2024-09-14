@@ -155,7 +155,6 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
   // card hover effect
   useEffect(() => {
     const tilt: HTMLElement[] = Array.from(document.querySelectorAll("#tilt"));
