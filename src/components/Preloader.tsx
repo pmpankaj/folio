@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import styles from "@/styles/Container.module.css";
+import styles from "../styles/Container.module.css";
 
 /* Framer motion variants */
 const opacity = {
