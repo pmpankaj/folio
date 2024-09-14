@@ -31,7 +31,7 @@ Follow the steps below to clone and run this project on your local system:
 $ git clone https://github.com/contacttiwari/folio.git
 
 # Navigate to the project directory
-$ cd portfolio
+$ cd folio-main
 
 # Remove current origin repository
 $ git remote remove origin
