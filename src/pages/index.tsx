@@ -12,19 +12,10 @@ import {
   UserCheck,
 } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
-import Spline from "@splinetool/react-spline";
 import Link from "next/link";
 import { cn, scrollTo } from "@/lib/utils";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
 import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
@@ -36,24 +27,28 @@ const aboutStats = [
 
 const projects = [
   {
+    id:1,
     title: "This website",
     description: "My 3D Portfolio",
     image: "/assets/portfolio.webm",
-    href: "https://pankajt.vercel.app",
+    href: "#",
   },
   {
+    id:2,
+    title: "SFU",
+    description: "SFU - Simon Fraser University",
+    image: "/assets/sfu.png",
+    href: "https://www.sfu.ca",
+  },
+  {
+    id:3,
     title: "Lush",
     description: "Lush - A British Cosmetics Retailer",
     image: "/assets/lush.webm",
     href: "https://www.lush.com/ca/en_ca",
   },
   {
-    title: "Western Forest Products",
-    description: "Western Forest Products Inc. is a Canadian lumber company",
-    image: "/assets/wfp.webm",
-    href: "https://www.westernforest.com/",
-  },
-  {
+    id:4,
     title: "Urban Analytics - NHSLive",
     description:
       "NHSLive - The tools and intelligence to make better decisions.",
@@ -61,6 +56,14 @@ const projects = [
     href: "https://www.nhslive.ca/",
   },
   {
+    id:5,
+    title: "Western Forest Products",
+    description: "Western Forest Products Inc. is a Canadian lumber company",
+    image: "/assets/wfp.png",
+    href: "https://www.westernforest.com/",
+  },
+  {
+    id:6,
     title: "AmbiMi",
     description: "AmbiMi - On-Demand Staffing Solution",
     image: "/assets/ambimi.webm",
@@ -195,7 +198,7 @@ export default function Home() {
               <h1
                 data-scroll
                 data-scroll-enable-touch-speed
-                data-scroll-speed=".05"
+                data-scroll-speed=".5"
                 data-scroll-direction="horizontal"
               >
                 <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
@@ -209,7 +212,7 @@ export default function Home() {
               <p
                 data-scroll
                 data-scroll-enable-touch-speed
-                data-scroll-speed=".05"
+                data-scroll-speed=".5"
                 className="mt-1 max-w-lg text-2xl tracking-tight text-muted-foreground"
               >
                 A strategic product leader who thrives on the excitement of
@@ -219,7 +222,7 @@ export default function Home() {
             <span
               data-scroll
               data-scroll-enable-touch-speed
-              data-scroll-speed=".05"
+              data-scroll-speed=".5"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
               <Link href="mailto:contacttiwari@yahoo.com" passHref>
@@ -251,27 +254,15 @@ export default function Home() {
             width={300}
             height={150}
             quality={100}
-            className="mt-14 h-full w-full rounded-t-md bg-primary object-cover sm:hidden"
+            className="mt-14 h-full w-full rounded-md bg-primary object-cover"
           />
-          <span className="flex hidden flex-row items-center space-x-2 md:flex">
-            <div
-              data-scroll
-              data-scroll-speed=".05"
-              id={styles["canvas-container"]}
-              className="mt-14 h-full w-full xl:mt-0"
-            >
-              <Suspense fallback={<span>Loading...</span>}>
-                <Spline scene="/assets/scene.splinecode" />
-              </Suspense>
-            </div>
-          </span>
         </section>
 
         {/* About */}
         <section id="about" data-scroll-section>
           <div
             data-scroll
-            data-scroll-speed=".4"
+            data-scroll-speed=".5"
             data-scroll-position="top"
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
@@ -320,7 +311,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div data-scroll data-scroll-speed=".4" className="my-64">
+          <div data-scroll data-scroll-speed=".5" className="my-64">
             <span className="text-gradient clash-grotesk text-right text-4xl font-semibold tracking-tighter">
               ✨ Portfolio
             </span>
@@ -333,52 +324,40 @@ export default function Home() {
               systems like CRMs, ERPs, and large-scale web applications. Here
               are some of my favorite ones
             </p>
-
-            {/* Carousel */}
-            <div className="mt-14">
-              <Carousel setApi={setCarouselApi} className="w-full">
-                <CarouselContent>
-                  {projects.map((project) => (
-                    <CarouselItem key={project.title} className="md:basis-1/2">
-                      <Card id="tilt">
-                        <CardHeader className="p-0">
-                          {project.image.endsWith(".webm") ? (
-                            <video
-                              src={project.image}
-                              autoPlay
-                              loop
-                              muted
-                              className="object-wrap aspect-video h-full w-full rounded-t-md bg-primary"
-                            />
-                          ) : (
-                            <Image
-                              src={project.image}
-                              alt={project.title}
-                              width={600}
-                              height={300}
-                              quality={100}
-                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                            />
-                          )}
-                        </CardHeader>
-                        <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                            {project.description}
-                          </CardTitle>
-                        </CardContent>
-                      </Card>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-              <div className="py-2 text-center text-sm text-muted-foreground">
-                <span className="font-semibold">
-                  {current} / {count}
-                </span>{" "}
-                products
+            <div className="grid items-center gap-1.5 md:grid-cols-2 xl:grid-cols-3 mt-5">
+            {projects.map((project) => (
+              <div key={project.id}>
+                <Card id="tilt">
+                  <CardHeader className="p-0">
+                    <Link href={project.href} target="_blank" passHref key={project.id}>
+                      {project.image.endsWith(".webm") ? (
+                        <video
+                          src={project.image}
+                          autoPlay
+                          loop
+                          muted
+                          className="object-wrap aspect-video h-full w-full rounded-t-md bg-primary"
+                        />
+                      ) : (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={600}
+                          height={300}
+                          quality={100}
+                          className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                        />
+                      )}
+                    </Link>
+                  </CardHeader>
+                  <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
+                    <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
+                      {project.description}
+                    </CardTitle>
+                  </CardContent>
+                </Card>
               </div>
+            ))}
             </div>
           </div>
         </section>
@@ -387,9 +366,9 @@ export default function Home() {
         <section id="services" data-scroll-section>
           <div
             data-scroll
-            data-scroll-speed=".4"
+            data-scroll-speed=".5"
             data-scroll-position="top"
-            className="my-24 flex flex-col justify-start space-y-10"
+            className="my-24 flex flex-col justify-start space-y-5"
           >
             <h2 className="mt-3 text-center text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
               Product Management Toolkit
@@ -398,7 +377,7 @@ export default function Home() {
               What I do on a day-to-day basis?
             </span>
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -5 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 1,
@@ -410,7 +389,7 @@ export default function Home() {
               {services.map((service) => (
                 <div
                   key={service.service}
-                  className="flex flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
+                  className="flex flex-col items-start rounded-md bg-white/5 p-12 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
                 >
                   <service.icon className="my-6 text-primary" size={20} />
                   <span className="text-lg tracking-tight text-foreground">
@@ -429,15 +408,15 @@ export default function Home() {
         <section id="contact" data-scroll-section className="my-64">
           <div
             data-scroll
-            data-scroll-speed=".4"
+            data-scroll-speed=".5"
             data-scroll-position="top"
-            className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24"
+            className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-8 text-center xl:py-24"
           >
             <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
               Let&apos;s work&nbsp;
               <span className="text-gradient clash-grotesk">together.</span>
             </h2>
-            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
+            <p className="mt-2 text-base tracking-tight text-muted-foreground xl:text-lg">
               Are you looking for a Product Leader to help you achieve your
               business goals?
             </p>
