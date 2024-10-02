@@ -12,6 +12,5 @@ export function scrollTo(element: Element | null) {
   element.scrollIntoView({
     behavior: "smooth",
     block: "center",
-    inline: "center",
   });
 }

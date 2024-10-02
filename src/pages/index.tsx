@@ -1,5 +1,5 @@
 import Container from "@/components/Container";
-import { useEffect, useRef, Suspense, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "@/styles/Home.module.css";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,35 +20,35 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
 const aboutStats = [
-  { label: "Features Released", value: "250+" },
-  { label: "Customer Interactions", value: "1750+" },
-  { label: "Stakeholder Engagements", value: "4500+" }
+  { label: "Projects Released", value: "450+" },
+  { label: "End-user Interactions", value: "3750+" },
+  { label: "Stakeholder Engagements", value: "7500+" },
 ];
 
 const projects = [
   {
-    id:1,
+    id: 1,
     title: "This website",
     description: "My 3D Portfolio",
     image: "/assets/portfolio.webm",
     href: "#",
   },
   {
-    id:2,
+    id: 2,
     title: "SFU",
     description: "SFU - Simon Fraser University",
     image: "/assets/sfu.png",
     href: "https://www.sfu.ca",
   },
   {
-    id:3,
+    id: 3,
     title: "Lush",
     description: "Lush - A British Cosmetics Retailer",
     image: "/assets/lush.webm",
     href: "https://www.lush.com/ca/en_ca",
   },
   {
-    id:4,
+    id: 4,
     title: "Urban Analytics - NHSLive",
     description:
       "NHSLive - The tools and intelligence to make better decisions.",
@@ -56,14 +56,14 @@ const projects = [
     href: "https://www.nhslive.ca/",
   },
   {
-    id:5,
+    id: 5,
     title: "Western Forest Products",
-    description: "Western Forest Products Inc. is a Canadian lumber company",
+    description: "Western Forest Products Inc. is a Canadian lumber company.",
     image: "/assets/wfp.png",
     href: "https://www.westernforest.com/",
   },
   {
-    id:6,
+    id: 6,
     title: "AmbiMi",
     description: "AmbiMi - On-Demand Staffing Solution",
     image: "/assets/ambimi.webm",
@@ -73,39 +73,39 @@ const projects = [
 
 const services = [
   {
-    service: "Crafting Product Strategy",
+    service: "Crafting the Strategy",
     description:
-      "As a strategic thinker, plotting the course for the product's journey. I analyze market trends, pore over customer feedback, and identify opportunities for improvement.",
+      "As a strategic thinker, I work with clients to understand their business goals. I analyze market trends, pore over customer feedback, and identify opportunities for improvement.",
     icon: Target,
   },
   {
     service: "Planning the Roadmap",
     description:
-      "Like plotting a cross-country road trip, I map out the features and enhancements the product will roll out over time. It's all about prioritizing what matters most to users and the business.",
+      "Like plotting a cross-country road trip, I map out the upgrades and enhancements that will roll out over time. It's all about prioritizing what matters most to the business and the end-users.",
     icon: LandPlot,
   },
   {
     service: "Collaborating like Champions",
     description:
-      "I work with cross-functional teams to deliver high-quality products. I help engineers, designers, marketers, and sales teams to bring the product to life. It's all about that synergy.",
+      "I work with cross-functional teams to deliver high-quality outcomes. I help managers, engineers, designers, marketers, and sales teams to bring the technology to life. It's all about that synergy.",
     icon: UserCheck,
   },
   {
     service: "Overseeing Development",
     description:
-      "I am responsible for leading and motivating the development team to deliver high-quality products. I provide clear direction, manage expectations, and ensure that the team is aligned with the product vision.",
+      "I am responsible for starting, leading and motivating the development teams to deliver high-quality results. I provide clear direction, manage expectations, and ensure that the team is aligned with the vision.",
     icon: MonitorSmartphone,
   },
   {
     service: "Launching with Pizzazz",
     description:
-      "I am the mastermind behind the big reveal. I collaborate to craft the perfect launch strategy. My goal is to ensure that the product not only shines but also meets the needs and expectations of our target market.",
+      "I am the mastermind behind the big reveal. I collaborate to craft the perfect launch strategy. My goal is to ensure that the release not only shines but also meets the needs and expectations of our end users.",
     icon: Rocket,
   },
   {
     service: "Learning and Growing",
     description:
-      "I am dedicated to data-driven decision-making. I meticulously analyze metrics and user feedback to identify opportunities for product improvement and ensure that it remains relevant and aligned with customer needs.",
+      "I am dedicated to data-driven decision-making. I meticulously analyze metrics and user feedback to identify opportunities for improvements and ensure that they remain relevant and aligned with user needs.",
     icon: Shrub,
   },
 ];
@@ -201,8 +201,8 @@ export default function Home() {
                 data-scroll-speed=".5"
                 className="mt-1 max-w-lg text-2xl tracking-tight text-muted-foreground"
               >
-                A strategic product leader who thrives on the excitement of
-                launch and release days.
+                A strategic leader who thrives on the excitement of launch and
+                release days.
               </p>
             </div>
             <span
@@ -234,6 +234,7 @@ export default function Home() {
               <TriangleDownIcon className="mt-1 animate-bounce" />
             </div>
           </div>
+
           <Image
             src="/assets/profile.jpg"
             alt="Pankaj Tiwari Profile Picture"
@@ -248,18 +249,19 @@ export default function Home() {
         <section id="about" data-scroll-section>
           <div
             data-scroll
-            data-scroll-speed=".5"
+            data-scroll-speed=".25"
             data-scroll-position="top"
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
             <h2 className="py-16  pb-2 text-left text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-              As a seasoned Product Leader with over a decade of experience in
-              SaaS and startups, I am driven by a passion for creating products
-              that make a positive impact.
+              As a seasoned Technology Leader with over a decade of experience
+              in SaaS and startups, I am driven by a passion for creating
+              experiences that make a positive impact.
               <br />
               <br />
-              I oversee product strategy, development, and execution, ensuring
-              alignment with company&apos;s objectives and customer needs.
+              I oversee the strategy, design, development, and execution,
+              ensuring alignment with organization&apos;s objectives and user
+              needs.
               <br />
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
@@ -297,7 +299,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div data-scroll data-scroll-speed=".5" className="my-64">
+          <div data-scroll data-scroll-speed=".25" className="my-64">
             <span className="text-gradient clash-grotesk text-right text-4xl font-semibold tracking-tighter">
               ✨ Portfolio
             </span>
@@ -310,40 +312,45 @@ export default function Home() {
               systems like CRMs, ERPs, and large-scale web applications. Here
               are some of my favorite ones
             </p>
-            <div className="grid items-center gap-1.5 md:grid-cols-2 xl:grid-cols-3 mt-5">
-            {projects.map((project) => (
-              <div key={project.id}>
-                <Card id="tilt">
-                  <CardHeader className="p-0">
-                    <Link href={project.href} target="_blank" passHref key={project.id}>
-                      {project.image.endsWith(".webm") ? (
-                        <video
-                          src={project.image}
-                          autoPlay
-                          loop
-                          muted
-                          className="object-wrap aspect-video h-full w-full rounded-t-md bg-primary"
-                        />
-                      ) : (
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          width={600}
-                          height={300}
-                          quality={100}
-                          className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                        />
-                      )}
-                    </Link>
-                  </CardHeader>
-                  <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                    <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                      {project.description}
-                    </CardTitle>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+            <div className="mt-5 grid items-center gap-1.5 md:grid-cols-2 xl:grid-cols-3">
+              {projects.map((project) => (
+                <div key={project.id}>
+                  <Card id="tilt">
+                    <CardHeader className="p-0">
+                      <Link
+                        href={project.href}
+                        target="_blank"
+                        passHref
+                        key={project.id}
+                      >
+                        {project.image.endsWith(".webm") ? (
+                          <video
+                            src={project.image}
+                            autoPlay
+                            loop
+                            muted
+                            className="object-wrap aspect-video h-full w-full rounded-t-md bg-primary"
+                          />
+                        ) : (
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            width={600}
+                            height={300}
+                            quality={100}
+                            className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                          />
+                        )}
+                      </Link>
+                    </CardHeader>
+                    <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
+                      <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
+                        {project.description}
+                      </CardTitle>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -352,12 +359,12 @@ export default function Home() {
         <section id="services" data-scroll-section>
           <div
             data-scroll
-            data-scroll-speed=".5"
+            data-scroll-speed=".25"
             data-scroll-position="top"
             className="my-24 flex flex-col justify-start space-y-5"
           >
             <h2 className="mt-3 text-center text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Product Management Toolkit
+              My Management Toolkit
             </h2>
             <span className="text-gradient clash-grotesk text-center text-xl font-semibold tracking-tighter">
               What I do on a day-to-day basis?
@@ -394,7 +401,7 @@ export default function Home() {
         <section id="contact" data-scroll-section className="my-64">
           <div
             data-scroll
-            data-scroll-speed=".5"
+            data-scroll-speed=".25"
             data-scroll-position="top"
             className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-8 text-center xl:py-24"
           >
@@ -403,7 +410,7 @@ export default function Home() {
               <span className="text-gradient clash-grotesk">together.</span>
             </h2>
             <p className="mt-2 text-base tracking-tight text-muted-foreground xl:text-lg">
-              Are you looking for a Product Leader to help you achieve your
+              Are you looking for a Technology Leader to help you achieve your
               business goals?
             </p>
             <Link href="mailto:contacttiwari@yahoo.com" passHref>
