@@ -20,8 +20,8 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
 const aboutStats = [
-  { label: "Projects Released", value: "450+" },
-  { label: "End-user Interactions", value: "3750+" },
+  { label: "Projects Released", value: "45+" },
+  { label: "End-user Interactions", value: "2750+" },
   { label: "Stakeholder Engagements", value: "7500+" },
 ];
 
