@@ -20,8 +20,8 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
 const aboutStats = [
-  { label: "Projects Released", value: "450+" },
-  { label: "End-user Interactions", value: "3750+" },
+  { label: "Projects Released", value: "45+" },
+  { label: "End-user Interactions", value: "2750+" },
   { label: "Stakeholder Engagements", value: "7500+" },
 ];
 
@@ -211,7 +211,11 @@ export default function Home() {
               data-scroll-speed=".5"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
-              <Link href="mailto:contacttiwari@yahoo.com" passHref>
+              <Link
+                href="https://calendly.com/pm-pankaj-contact/30min_pankaj"
+                target="_blank"
+                passHref
+              >
                 <Button>
                   Get in touch <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
@@ -317,31 +321,31 @@ export default function Home() {
                 <div key={project.id}>
                   <Card id="tilt">
                     <CardHeader className="p-0">
-                      <Link
+                      {/* <Link
                         href={project.href}
                         target="_blank"
                         passHref
                         key={project.id}
-                      >
-                        {project.image.endsWith(".webm") ? (
-                          <video
-                            src={project.image}
-                            autoPlay
-                            loop
-                            muted
-                            className="object-wrap aspect-video h-full w-full rounded-t-md bg-primary"
-                          />
-                        ) : (
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                            width={600}
-                            height={300}
-                            quality={100}
-                            className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                          />
-                        )}
-                      </Link>
+                      > */}
+                      {project.image.endsWith(".webm") ? (
+                        <video
+                          src={project.image}
+                          autoPlay
+                          loop
+                          muted
+                          className="object-wrap aspect-video h-full w-full rounded-t-md bg-primary"
+                        />
+                      ) : (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={600}
+                          height={300}
+                          quality={100}
+                          className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                        />
+                      )}
+                      {/* </Link> */}
                     </CardHeader>
                     <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
                       <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
@@ -367,7 +371,7 @@ export default function Home() {
               My Management Toolkit
             </h2>
             <span className="text-gradient clash-grotesk text-center text-xl font-semibold tracking-tighter">
-              What I do on a day-to-day basis?
+              What I can do for your organization?
             </span>
             <motion.div
               initial={{ opacity: 0, y: -5 }}
@@ -413,7 +417,11 @@ export default function Home() {
               Are you looking for a Technology Leader to help you achieve your
               business goals?
             </p>
-            <Link href="mailto:contacttiwari@yahoo.com" passHref>
+            <Link
+              href="https://calendly.com/pm-pankaj-contact/30min_pankaj"
+              target="_blank"
+              passHref
+            >
               <Button className="mt-6">Get in touch</Button>
             </Link>
           </div>
