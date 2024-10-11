@@ -211,15 +211,11 @@ export default function Home() {
               data-scroll-speed=".5"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
-<<<<<<< HEAD
               <Link
                 href="https://calendly.com/pm-pankaj-contact/30min_pankaj"
                 target="_blank"
                 passHref
               >
-=======
-              <Link href="https://calendly.com/pm-pankaj-contact/30min_pankaj" target="_blank" passHref>
->>>>>>> fdc835b739156b47c20ee6d23c9dd03fde9d44f4
                 <Button>
                   Get in touch <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
@@ -421,15 +417,11 @@ export default function Home() {
               Are you looking for a Technology Leader to help you achieve your
               business goals?
             </p>
-<<<<<<< HEAD
             <Link
               href="https://calendly.com/pm-pankaj-contact/30min_pankaj"
               target="_blank"
               passHref
             >
-=======
-            <Link href="https://calendly.com/pm-pankaj-contact/30min_pankaj" target="_blank" passHref>
->>>>>>> fdc835b739156b47c20ee6d23c9dd03fde9d44f4
               <Button className="mt-6">Get in touch</Button>
             </Link>
           </div>
